@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const fetchArticles = require('./fetchArticles');
-const convert = require('./htmlToMarkdown');
+const convert = require('./htmlToMd');
 
 async function main() {
     const articles = await fetchArticles();
@@ -12,8 +12,8 @@ async function main() {
 
     articles.forEach(article => {
         const content = convert(article);
-        // Save file as slug.md
-        const fileName = `${article.slug}.md`;
+        // Save file as id.md
+        const fileName = `${article.id}.md`;
         fs.writeFileSync(path.join(outputDir, fileName), content);
         console.log(`Saved: ${fileName}`);
     });
