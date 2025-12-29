@@ -1,0 +1,6 @@
+{
+  "name": "scraper-js",
+  "version": "1.0.0",
+  "description": "Scrape OptiSigns support articles and convert to Markdown",
+  "main": "src/index.js"
+}
