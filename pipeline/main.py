@@ -6,14 +6,13 @@ import glob
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-# Paths configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "..", "scraper", "data")
 STATE_FILE = os.path.join(BASE_DIR, "pipeline_state.json")
 ASSISTANT_ID = os.getenv("ASSISTANT_ID")
+
+load_dotenv(dotenv_path=os.path.join(BASE_DIR, "..", ".env"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def get_file_hash(filepath):
     hasher = hashlib.md5()
@@ -66,11 +65,11 @@ def run_daily_job():
     print(f"\n--- [3/3] Uploading Delta ({len(files_to_upload)} files) to OpenAI ---")
     try:
         # 1. Create a new Vector Store
-        vector_store = client.beta.vector_stores.create(name=f"OptiSigns_Delta_{added+updated}")
+        vector_store = client.vector_stores.create(name=f"OptiSigns_Delta_{added+updated}")
         
         # 2. Upload the changed files
         file_streams = [open(path, "rb") for path in files_to_upload]
-        file_batch = client.beta.vector_stores.file_batches.upload_and_poll(
+        file_batch = client.vector_stores.file_batches.upload_and_poll(
             vector_store_id=vector_store.id, 
             files=file_streams
         )
