@@ -1,0 +1,40 @@
+PS C:\Users\ADMIN\source\repos\scraper-bot> docker run --env-file .env scraper-bot
+Saved: 47616485609491.md
+Saved: 46299245284243.md
+Saved: 45619214182803.md
+Saved: 44890229616403.md
+Saved: 43751835488403.md
+Saved: 43657735780627.md
+Saved: 42087942047379.md
+Saved: 41432385864595.md
+Saved: 40736654972563.md
+Saved: 40671590645651.md
+Saved: 40212027797523.md
+Saved: 40147900639891.md
+Saved: 39488874989587.md
+Saved: 39250660729747.md
+Saved: 39080869746067.md
+Saved: 38680194603155.md
+Saved: 38062664690195.md
+Saved: 37966066335891.md
+Saved: 36911639377683.md
+Saved: 36501302096915.md
+Saved: 35749502945555.md
+Saved: 35184720136595.md
+Saved: 34379983350163.md
+Saved: 33940834613139.md
+Saved: 33382537925267.md
+Saved: 32860569148819.md
+Saved: 32839794222099.md
+Saved: 31960461758611.md
+Saved: 31860170199955.md
+Saved: 31695220475283.md
+Success: Already scraped 30 articles.
+--- [1/3] Running Node.js Scraper ---
+
+--- [2/3] Detecting Delta Changes ---
+Status: Added: 30, Updated: 0, Skipped: 0
+
+--- [3/3] Uploading Delta (30 files) to OpenAI ---
+Assistant updated successfully.
+Job completed. Embedded: FileCounts(cancelled=0, completed=30, failed=0, in_progress=0, total=30)
