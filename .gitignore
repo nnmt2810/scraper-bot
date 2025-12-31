@@ -6,3 +6,4 @@ venv/
 # Data & secrets
 .env
 scraper/data/*.md
+pipeline/pipeline_state.json

@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+node_modules/
+.env
+pipeline/pipeline_state.json
+scraper/data/*.md
+.git
